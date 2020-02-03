@@ -4,7 +4,7 @@ import {useState} from 'react'
 import './TodoForm.css';
 const TodoForm = (props) => {
 
-const [task,setTask] = useState(null);
+const [task,setTask] = useState("");
 console.log("rendering form")
 const setEnteredTitle = (value) => {
     setTask(value);
@@ -15,7 +15,7 @@ const submitHandler = event => {
     props.addTask(task);
     };
 return (
-    <section className="ingredient-form">
+    <section className="todo-form">
         <Card>
         <form onSubmit={submitHandler}>
             <div className="form-control">
@@ -25,13 +25,12 @@ return (
                 id="title"
                 value={task}
                 onChange={event => {
-                setEnteredTitle(event.target.value);
+                    setEnteredTitle(event.target.value);
                 }}
             />
             </div>
-            <div className="ingredient-form__actions">
+            <div className="todo-form__actions">
             <button type="submit">Add Task</button>
-            {/* {props.loading && <LoadingIndicator />} */}
             </div>
         </form>
         </Card>

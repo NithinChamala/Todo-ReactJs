@@ -8,7 +8,7 @@ const TodoList = (props) => {
 
     if(props.searchedStat === "all") {
         return (
-            <section className ="ingredient-list">
+            <section className ="todo-list">
             <h2 style= {{color:'green'}}>Total Tasks</h2>
             <ul>
             {props.data.map(ig => 
@@ -60,7 +60,7 @@ const TodoList = (props) => {
     }
 
     return (
-        <section className="ingredient-list">
+        <section className="todo-list">
         <h2 style= {{color:'green'}}>Total Tasks</h2>
         <ul>
           {props.data.map(ig => 
