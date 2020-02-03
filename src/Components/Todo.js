@@ -5,55 +5,18 @@ import TodoList from './TodoList'
 import {connect} from 'react-redux'
 
 const Todo = (props) => {
-    const [state,setState] = useState([]);
     const [searchedData,setSearchedData] = useState(null);
     const [searchedStatus,setSearchedStatus] = useState("todo");
     const [input,setinput] = useState();
 
-    // const addTaskHandler = ((task,statusValue) => {
-    //   for (let stat of state) {
-    //     if(stat.taskName === task) {
-    //       alert("task already exists ")
-    //       return
-    //     }
-    //   }
-    //   const obj = {}
-    //   obj.taskName = task;
-    //   obj.status = statusValue;
-    //   let prevState = [...state];
-    //   prevState.push(obj);
-    //   setState(prevState);
-    // })
-    // const deleteItem = (id ) => {
-    //   console.log(id);
-    //   const result =  state.filter(word => !(word.taskName == id))
-    //   console.log("result",result)
-    //   //  const newData = (state.filter(data => {
-    //   //     return data.taskName === id
-    //   // }))
-    //   setState(result);
-    // }
+
     const searchHandler = (data) => {
       console.log("data searching",data);
       setSearchedData(data);
 
     }
 
-    // const setStatusHandler = (event) => {
-    //   console.log(event.target.name);
-    //   console.log(event.target.value);
-    //   console.log("statusHandler")
-    //   let prevstate = state.map((taskobj) => {
-    //     if(taskobj.taskName === event.target.name) {
-    //       taskobj.status = event.target.value;
-    //       console.log("hit here")
-    //     }
-    //     return taskobj;
-    //   })
 
-    //   setState(prevstate);
-      
-    // }
     const searchStatushandler =(data) => {
       console.log("status searching",data);
       setSearchedStatus(data);

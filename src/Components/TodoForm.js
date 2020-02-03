@@ -31,7 +31,6 @@ return (
             </div>
             <div className="ingredient-form__actions">
             <button type="submit">Add Task</button>
-            {/* {props.loading && <LoadingIndicator />} */}
             </div>
         </form>
         </Card>

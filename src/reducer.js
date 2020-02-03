@@ -8,7 +8,6 @@ let initialState = {
 const reducer = (state = initialState, action) => {
     console.log(action.type)
     if (action.type === 'ADD') {
-        console.log("hit herebabe")
         for (let stat of state.listItems) {
             if(stat.taskName === action.task) {
                 alert("task already exists ")
