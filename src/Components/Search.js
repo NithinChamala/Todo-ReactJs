@@ -3,9 +3,7 @@ import './Search.css'
 import Card from './UI/Card'
 
 const Search = (props) => {
-
     return (
-
         <section className="search">
         <Card>
           <div className="search-input">
@@ -15,7 +13,6 @@ const Search = (props) => {
                 type="text"
                 onChange={event => props.searched(event.target.value)}
                 />
-
             </div>
            <div>
                 <label>Filter by Status</label>
@@ -27,7 +24,6 @@ const Search = (props) => {
                             <option value="done">done</option>
                     </select>
                 </span>
-                
             </div>
           </div>
         </Card>
