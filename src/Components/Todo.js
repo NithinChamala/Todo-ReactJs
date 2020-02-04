@@ -17,7 +17,7 @@ const Todo = (props) => {
     }
 
 
-    const searchStatushandler =(data) => {
+    const searchStatushandler = (data) => {
       console.log("status searching",data);
       setSearchedStatus(data);
     }
@@ -26,11 +26,11 @@ const Todo = (props) => {
     }
 
     const todoForm = useMemo(() => {
-      return (<TodoForm changed = { (event) =>onChangeHandler(event)} addTask = {(task) => props.submit(task,"todo")}></TodoForm>)
+      return (<TodoForm changed = { (event) => onChangeHandler(event)} addTask = {(task) => props.submit(task,"todo")}></TodoForm>)
     },[input])
 
     return (
-      <div className="App">
+      <div className = "App">
           {todoForm}
         <section>
           <Search searched = { (data) => searchHandler(data)} searchedStatus = {(data) => searchStatushandler(data)}></Search>
@@ -38,7 +38,7 @@ const Todo = (props) => {
            <TodoList data = {props.ctrl} onRemoveItem = { (name) => props.delete(name)} searched = {searchedData} searchedStat ={searchedStatus}
            statusHandler = {(event) => { props.setStatusHandler(event)
            }} />
-          <div style= {{color:'red'}}></div>
+          <div style = {{color:'red'}}> </div>
         </section>
       </div>
     )
@@ -56,7 +56,6 @@ const mapDispatchToProps = dispatch => {
       submit: (taskName,stat) => dispatch({type: 'ADD',task : taskName ,status : stat}),
       delete : (taskName) => dispatch({type:'DELETE',task:taskName}),
       setStatusHandler : (event) => dispatch({type:'SETSTATUS',task:event.target.name,status :event.target.value})
-      // print : () => dispatch({type: 'PRINT'})
   }
 };
 export default connect(mapStateToProps,mapDispatchToProps)(Todo);
