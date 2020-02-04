@@ -10,16 +10,16 @@ import { Provider } from 'react-redux';
 afterEach(cleanup)
 
 //1
-it("checks if className ingredient-form exists",() => {
+it("checks if className todo-form exists",() => {
 const store = createStore(Reducer);
     const {container } = render(<Provider store = {store}><Todo /></Provider>)
-    expect(container.querySelector('.ingredient-form')).not.toBeNull();
+    expect(container.querySelector('.todo-form')).not.toBeNull();
 })
 //2
 it("renders app component",() => {
     const store = createStore(Reducer);
     const {container } = render(<Provider store = {store}><Todo /></Provider>)
-    expect(container.querySelector('.ingredientrm')).toBeNull();
+    expect(container.querySelector('.todorm')).toBeNull();
     expect(container.querySelector('#root')).toBeNull();
 })
 //3
@@ -35,6 +35,7 @@ it("checks text content ",() => {
     const {getByRole } = render(<Provider store = {store}><Todo /></Provider>)
     expect(getByRole('heading')).toHaveTextContent('Tasks');
 })
+
 //5
 it("checks text content inside the document",() => {
     const store = createStore(Reducer);
